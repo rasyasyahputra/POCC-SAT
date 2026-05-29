@@ -67,10 +67,20 @@ function Preview(){
           <p>
             {data.app_highlight.author}
           </p>
-          <p>
-            ⭐ {data.app_highlight.rating}
-            ({data.app_highlight.reviews} reviews)
-          </p>
+          
+          <div className="stats">
+
+            <div className="stat-box">
+              <h2>{data.app_highlight.rating}</h2>
+              <p>Rating</p>
+            </div>
+
+            <div className="stat-box">
+              <h2>{data.app_highlight.reviews}</h2>
+              <p>Reviews</p>
+            </div>
+
+          </div>
 
           <a
             className="download-btn"
@@ -79,7 +89,7 @@ function Preview(){
             rel="noopener noreferrer"
           >
              Install
-          </a>
+        </a>
 
         </div>
 
