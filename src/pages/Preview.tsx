@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 
 interface AppResult {
-    thumbnail: string;
-    title: string;
-    author: string;
+  thumbnail: string;
+  title: string;
+  author: string;
+  rating: number;
+  description: string;
+  images: string[];
 }
 interface SerpApiRespooense {
   app_highlight: AppResult[];
@@ -13,6 +16,7 @@ interface SerpApiRespooense {
 function Preview(){
     // const [data, setData] = useState(null);
     const [data, setData] = useState<SerpApiRespooense | null>(null);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
     // const API_KEY = "c3bf1d91c4009118a9aec39e8e3af3dc611eea6e3cf730f9a81a9ed18d243c01";
     // const ENDPOINT = "https://serpapi.com/search";
     const params = {
@@ -28,7 +32,7 @@ function Preview(){
         // const serpUrl = `${ENDPOINT}?${queryString}`
         // fetch("https://corsproxy.io/?" + encodeURIComponent(serpUrl))
         const queryString = new URLSearchParams(params).toString()
-        fetch('/api/search?${queryString}')
+        fetch(`/api/search?${queryString}`)
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
@@ -92,7 +96,7 @@ function Preview(){
       <div className="image-list">
 
         {data.app_highlight.images.map(
-          (img, index) => (
+          (img: string, index: number) => (
 
             <img
               key={index}
