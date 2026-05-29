@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 
 interface AppResult {
+    thumbnail: string;
     title: string;
-    original: string;
-    source: string;
+    author: string;
 }
 interface SerpApiRespooense {
   app_highlight: AppResult[];
