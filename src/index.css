@@ -47,7 +47,7 @@ body {
   margin-top: 15px;
   padding: 12px 25px;
   border-radius: 30px;
-  background: #00c853;
+  background: #935ba3;
   color: white;
   font-size: 17px;
   cursor: pointer;
@@ -58,7 +58,7 @@ body {
 
 .download-btn:hover {
   transform: scale(1.05);
-  background: #00e676;
+  background: rgb(226, 152, 248);
 }
 
 /* SCREENSHOTS */
