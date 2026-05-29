@@ -5,7 +5,7 @@ export default async function handler(req, res) {
             api_key: process.env.SERPAPI_KEY,
 
         });
-        const response = await fetch(`https://serpapi.com/search?${query}()}`);
+        const response = await fetch(`https://serpapi.com/search?${query}`);
         const data = await response.json();
     } catch (err) {
         res.status(500).json({ error: err.message });
