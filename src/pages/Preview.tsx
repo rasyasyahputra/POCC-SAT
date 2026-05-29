@@ -38,8 +38,8 @@ function Preview(){
                 console.log(result)
                 setData(result)
             })
-            .catch((err) => console.error("Error:", err))
-    }, [])
+            .catch((err) => console.error("Error:", err));
+    }, []);
 
     if (!data) {
         return <div>Loading...</div>
