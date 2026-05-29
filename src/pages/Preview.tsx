@@ -9,7 +9,7 @@ interface AppResult {
   images: string[];
 }
 interface SerpApiRespooense {
-  app_highlight: AppResult[];
+  app_highlight: AppResult;
 }
 
 
