@@ -5,6 +5,8 @@ interface AppResult {
   title: string;
   author: string;
   rating: number;
+  reviews: number;
+  link: string;
   description: string;
   images: string[];
 }
@@ -67,11 +69,17 @@ function Preview(){
           </p>
           <p>
             ⭐ {data.app_highlight.rating}
+            ({data.app_highlight.reviews} reviews)
           </p>
 
-          <button className="download-btn">
-            Install
-          </button>
+          <a
+            className="download-btn"
+            href={data.app_highlight.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+             Install
+          </a>
 
         </div>
 
